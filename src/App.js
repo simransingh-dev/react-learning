@@ -202,16 +202,47 @@
 // }
 // export default App;
 
-// Adult or minor 
+// // Adult or minor 
+
+// function App(){
+//   const age=26;
+
+//   return (
+//     <div>
+//       {
+//         age>=18 ? <h1>Adult</h1> :
+//         <h1> Minor</h1>
+//       }
+//     </div>
+//   );
+// }
+// export default App;
+
+
+// function App(){
+//   const stock = 10;
+
+//   return (
+//     <div>
+//       {
+//         stock > 0 ? <h1>Available</h1> :
+//         <h1>out of stock</h1>
+//       }
+//     </div>
+//   );
+// }
+// export default App;
+
+// online and offline status
 
 function App(){
-  const age=26;
+  const isOnline = true;
 
-  return (
+  return(
     <div>
       {
-        age>=18 ? <h1>Adult</h1> :
-        <h1> Minor</h1>
+        isOnline ? <h1> Online</h1>:
+        <h1>Offline</h1>
       }
     </div>
   );
