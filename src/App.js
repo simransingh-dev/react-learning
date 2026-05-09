@@ -187,48 +187,33 @@
 // export default App;
 
 
+// login /logout button
+
 // function App(){
-//   const isLoggedIn =false;
+//   const isLoggedIn =true;
 
 //   return(
 //     <div>
-//       {isLoggedIn ? <h1>Welcome Back</h1> 
-//       : <h1>Please login</h1>}
+//       isLoggedIn ? <button> Logout
+
+//       </button> : <button>Login</button>
 //     </div>
 //   );
 // }
 // export default App;
 
-// function App(){
-//   const isAdmin=true;
-
-//   return(
-//     <div>
-//       <h1> Dashboard</h1>
-//       {isAdmin && <button> Delete user</button>}
-//     </div>
-//   );
-// }
-// export default App;
-
-import { useState } from "react";
+// Adult or minor 
 
 function App(){
-  const [show,setShow]=
-  useState(true);
+  const age=26;
 
-  return(
+  return (
     <div>
-
-      <button onclick={() => setShow( ! show)}>
-        Toggle
-
-      </button>
-
-      {show ? <h1> hello Simran</h1>
-      : <h1>Message hidden</h1>}
+      {
+        age>=18 ? <h1>Adult</h1> :
+        <h1> Minor</h1>
+      }
     </div>
   );
 }
-
 export default App;
