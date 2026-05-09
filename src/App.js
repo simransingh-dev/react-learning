@@ -170,18 +170,65 @@
 // }
 // export default App;
 
-function App(){
-return(
-  <form>
-    <label>
-      Enter your name :
+// function App(){
+// return(
+//   <form>
+//     <label>
+//       Enter your name :
      
-      <input type="text">
-      </input> <br />
-      Password :
-      <input type="password"></input>
-    </label>
-  </form>
-)
+//       <input type="text">
+//       </input> <br />
+//       Password :
+//       <input type="password"></input>
+//     </label>
+//   </form>
+// )
+// }
+// export default App;
+
+
+// function App(){
+//   const isLoggedIn =false;
+
+//   return(
+//     <div>
+//       {isLoggedIn ? <h1>Welcome Back</h1> 
+//       : <h1>Please login</h1>}
+//     </div>
+//   );
+// }
+// export default App;
+
+// function App(){
+//   const isAdmin=true;
+
+//   return(
+//     <div>
+//       <h1> Dashboard</h1>
+//       {isAdmin && <button> Delete user</button>}
+//     </div>
+//   );
+// }
+// export default App;
+
+import { useState } from "react";
+
+function App(){
+  const [show,setShow]=
+  useState(true);
+
+  return(
+    <div>
+
+      <button onclick={() => setShow( ! show)}>
+        Toggle
+
+      </button>
+
+      {show ? <h1> hello Simran</h1>
+      : <h1>Message hidden</h1>}
+    </div>
+  );
 }
+
 export default App;
