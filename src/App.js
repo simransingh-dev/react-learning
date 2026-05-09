@@ -236,13 +236,12 @@
 // online and offline status
 
 function App(){
-  const isOnline = true;
-
-  return(
+const loading=false;
+  return (
     <div>
       {
-        isOnline ? <h1> Online</h1>:
-        <h1>Offline</h1>
+        loading ? <h1> Loading ...</h1> :
+        <h1>Data Loaded</h1>
       }
     </div>
   );
