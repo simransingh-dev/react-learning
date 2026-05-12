@@ -202,48 +202,66 @@
 // }
 // export default App;
 
-// // Adult or minor 
+// import { useState } from "react";
 
 // function App(){
-//   const age=26;
+//     const [color,setColor] =useState("Red");
+//     const [name,setName] =useState("Simran");
+//     const [myclass,setmyClass] =useState("12th");
+//     const [year,setYear] =useState(2026);
+//     return(
+//         <>
+//         <h1> My favourite color is {color}</h1>
+//         <p> This is me{name} {myclass} {year}</p>
+import { useState } from "react";
 
-//   return (
-//     <div>
-//       {
-//         age>=18 ? <h1>Adult</h1> :
-//         <h1> Minor</h1>
-//       }
-//     </div>
-//   );
-// }
-// export default App;
+export default function RandomQuoteGenerator() {
+  const quotes = [
+    "Keep pushing forward 🚀",
+    "Consistency beats motivation 💯",
+    "Code. Learn. Repeat 💻",
+    "Small progress is still progress 🌱",
+    "Dream big and build bigger ⚛️",
+  ];
 
+  const [quote, setQuote] = useState("");
 
-// function App(){
-//   const stock = 10;
+  const generateQuote = () => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    setQuote(quotes[randomIndex]);
+  };
 
-//   return (
-//     <div>
-//       {
-//         stock > 0 ? <h1>Available</h1> :
-//         <h1>out of stock</h1>
-//       }
-//     </div>
-//   );
-// }
-// export default App;
-
-// online and offline status
-
-function App(){
-const loading=false;
   return (
-    <div>
-      {
-        loading ? <h1> Loading ...</h1> :
-        <h1>Data Loaded</h1>
-      }
+    <div style={styles.container}>
+      <h1>Random Quote Generator ✨</h1>
+
+      <p style={styles.quote}>{quote || "Click below to generate a quote"}</p>
+
+      <button onClick={generateQuote} style={styles.button}>
+        Generate Quote
+      </button>
     </div>
   );
 }
-export default App;
+
+const styles = {
+  container: {
+    textAlign: "center",
+    marginTop: "100px",
+    fontFamily: "Arial",
+  },
+
+  quote: {
+    fontSize: "22px",
+    margin: "30px 0",
+    color: "#333",
+  },
+
+  button: {
+    padding: "12px 24px",
+    border: "none",
+    borderRadius: "10px",
+    cursor: "pointer",
+    fontSize: "16px",
+  },
+};
