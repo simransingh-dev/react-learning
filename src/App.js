@@ -213,55 +213,47 @@
 //         <>
 //         <h1> My favourite color is {color}</h1>
 //         <p> This is me{name} {myclass} {year}</p>
-import { useState } from "react";
 
-export default function RandomQuoteGenerator() {
-  const quotes = [
-    "Keep pushing forward 🚀",
-    "Consistency beats motivation 💯",
-    "Code. Learn. Repeat 💻",
-    "Small progress is still progress 🌱",
-    "Dream big and build bigger ⚛️",
-  ];
+// import {useState,useEffect} from "react";
+// function App() {
+//   const[count,setCount]=useState(0);
+//   useEffect(() => {
+//     console.log("Component rendered");
+    
+    
+//   },[count])
+//   return(
+// <button onClick = {() => setCount(count + 1)}> {count}</button>
 
-  const [quote, setQuote] = useState("");
+//   )
+// }
+// export default App;
 
-  const generateQuote = () => {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    setQuote(quotes[randomIndex]);
-  };
+// import {useState,useEffect} from "react";
+// function App(){
+//   const[count,setCount]=useState(0);
+//   useEffect(() => {
+//     const timer=setTimeout(() => {
+//       setCount((count) => count+1);
 
-  return (
-    <div style={styles.container}>
-      <h1>Random Quote Generator ✨</h1>
+//     },1000);
+//     return() => clearTimeout(timer);
+//   },[count]);
+//   return <h1> I have rendered {count} times..</h1>
+// }
+// export default App;
 
-      <p style={styles.quote}>{quote || "Click below to generate a quote"}</p>
+import { useRef } from "react";
+function App(){
 
-      <button onClick={generateQuote} style={styles.button}>
-        Generate Quote
-      </button>
+  const inputRef= useRef(null);
+  const handleFocus =() =>{inputRef.current.focus()};
+
+  return(
+    <div>
+      <input ref={inputRef} type='text'></input>
+      <button onClick={handleFocus}> Focus input</button>
     </div>
-  );
+  )
 }
-
-const styles = {
-  container: {
-    textAlign: "center",
-    marginTop: "100px",
-    fontFamily: "Arial",
-  },
-
-  quote: {
-    fontSize: "22px",
-    margin: "30px 0",
-    color: "#333",
-  },
-
-  button: {
-    padding: "12px 24px",
-    border: "none",
-    borderRadius: "10px",
-    cursor: "pointer",
-    fontSize: "16px",
-  },
-};
+export default App;
